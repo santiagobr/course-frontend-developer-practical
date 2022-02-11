@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="./logos/favicon_bota_fora.svg" type="img">
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
   <title>Document</title>
 
@@ -42,44 +43,28 @@
       justify-self: center;
       display: none;
     }
+    .title {
+      font-size: var(--lg);
+      margin-bottom: 36px;
+      text-align: start;
+    }
     .form {
       display: flex;
       flex-direction: column;
     }
-    .form a {
-      color: var(--hospital-green);
-      font-size: var(--sm);
-      text-align: center;
-      text-decoration: none;
-      margin-bottom: 52px;
+    .form div {
+      display: flex;
+      flex-direction: column;
     }
     .label {
       font-size: var(--sm);
       font-weight: bold;
       margin-bottom: 4px;
     }
-    .input {
-      background-color: var(--text-input-field);
-      border: none;
-      border-radius: 8px;
-      height: 32px;
+    .value {
+      color: var(--very-light-pink);
       font-size: var(--md);
-      padding: 4px;
-      margin-bottom: 12px;
-    }
-    .input-email {
-      margin-bottom: 22px;
-    }
-    .primary-button {
-      background-color: var(--hospital-green);
-      border-radius: 8px;
-      border: none;
-      color: var(--white);
-      width: 100%;
-      cursor: pointer;
-      font-size: var(--md);
-      font-weight: bold;
-      height: 50px;
+      margin: 8px 0 32px 0;
     }
     .secondary-button {
       background-color: var(--white);
@@ -98,13 +83,12 @@
     }
 
     @media (max-width: 640px) {
-      .logo {
-        display: block;
+      .form-container {
+        height: 100%;
       }
-      .signup-button {
-        position: absolute;
-        bottom: 20px;
-        width: inherit;
+      .form {
+        height: 100%;
+        justify-content: space-between;
       }
     }
   </style>
@@ -114,19 +98,21 @@
 <body>
   <div class="login">
     <div class="form-container">
-      <img src="./logos/logo_yard_sale.svg" alt="logo" class="logo">
+      <h1 class="title">My account</h1>
 
       <form action="/" class="form">
-        <label for="email" class="label">Email address</label>
-        <p class="value"></p>
+        <div>
+          <label for="name" class="label">Name</label>
+          <p class="value">Santiago Bastidas</p>
 
-        <label for="password" class="label">Password</label>
-        <input type="password" id="password" placeholder="*********" class="input input-password"/>
+          <label for="email" class="label">Email</label>
+          <p class="value">santiagobr@example.com</p>
 
-        <input type="submit" value="Log in" class="primary-button login-button">
-        <a href="/">Forgot my password</a>
+          <label for="password" class="label">Password</label>
+          <p class="value">*********</p>
+        </div>
+        <input type="submit" value="Edit" class="secondary-button login-button">
       </form>
-      <button class="secondary-button signup-button">Sign up</button>
     </div>
   </div>
 </body>
